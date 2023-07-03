@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %} Ürünlerimiz {% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+<style></style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row align-items-center">
+       {% for product in services %}
+       <div class="col-md-3 mt-3">
+          <div class="card animate__animated animate__fadeInBottomLeft">
+             <img src="{{ product.file_upload.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+             <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.comment }}</p>
+             </div>
+          </div>
+       </div>
+       {% endfor %}
+    </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %} Anasayfa {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 align-self-center">
+                <p class="text-uppercase text-danger fw-bold fs-2">
+                    Merhaba!
+                    <p class="fs-3 text-light">Lia Aydınlatmaya Hoşgeldiniz.</p>
+                </p>
+                
+                <p>
+                    <p class="text-light">
+                        Evinize yeni bir hava katmak ister misiniz? Cevabınız evet ise aşağıda ki butona TIKLAYIN!
+                        <p>
+                            <a class="btn btn-warning btn-lg" href="{% url 'page_products' %}">EVET</a>
+                        </p>
+                    </p>
+                </p>
+                    
+                
+            </div>
+            <div class="col-md-6">
+                <img class='img-fluid float-end' src="{% static 'b1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+{% endblock %}

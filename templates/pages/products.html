@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %} Ürünlerimiz {% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style></style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+       {% for product in products %}
+       <div class="col-md-3 mt-3">
+          <div class="card animate__animated animate__rotateInDownLeft">
+             <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+             <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+             </div>
+          </div>
+       </div>
+       {% endfor %}
+    </div>
+ </div>
+{% endblock %}

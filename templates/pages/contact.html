@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %} İletişim {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                {% if messages %}
+                <div class="alert alert-info text-center" role="alert">
+                    {% for message in messages %}
+                        {% if message.tags %}
+                            <span>{{message}}</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <form method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    {% include 'partials/form.html' %}
+                    <button style="background-color:#E8FFFF; color:#002B5B;" class='btn' type="submit">Gönder</button>
+                </form>
+                
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d191859.15014282474!2d36.313699!3d41.291474!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408877e97607d663%3A0xb939cc265fdeb52!2sSamsun!5e0!3m2!1str!2str!4v1687898070644!5m2!1str!2str" width="700" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
